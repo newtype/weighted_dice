@@ -1,11 +1,10 @@
+""" Rolls a weighted dice with custom sides that you define.
+"""
+
 import random
 
-# key: name of side, value: weight of side
-dice_sides = {
-    "movie" : 1,
-    "lecture": 3,
-    "reading": 5,
-    }
+import dice
+
 
 def roll(dice_sides):
     """ Randomly pick a side, respecting each side's weight """
@@ -19,8 +18,9 @@ def roll(dice_sides):
 
 def main():
     print("Rolling dice...")
-    result = roll(dice_sides)
+    result = roll(dice.sides)
     print("Result:", result)
+
 
 if __name__ == '__main__':
     main()
