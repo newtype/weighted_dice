@@ -7,8 +7,8 @@ dice_sides = {
     "reading": 5,
     }
 
-def roll():
-    """  """
+def roll(dice_sides):
+    """ Randomly pick a side, respecting each side's weight """
     expanded_sides = [
         weighted_side
         for side, weight in dice_sides.items()
@@ -19,7 +19,7 @@ def roll():
 
 def main():
     print("Rolling dice...")
-    result = roll()
+    result = roll(dice_sides)
     print("Result:", result)
 
 if __name__ == '__main__':
