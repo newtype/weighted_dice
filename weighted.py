@@ -1,9 +1,9 @@
 """ Rolls a weighted dice with custom sides that you define.
 """
 
+import sys
 import random
-
-import dice
+import json
 
 
 def roll(dice_sides):
@@ -17,10 +17,11 @@ def roll(dice_sides):
 
 
 def main():
-    print("Rolling dice...")
-    result = roll(dice.sides)
-    print("Result:", result)
-
+    try:
+        sides = json.load(open(sys.argv[1]))
+    except:
+        print("gimme a json file name as the first arg")
+    print(roll(sides))
 
 if __name__ == '__main__':
     main()
